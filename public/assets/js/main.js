@@ -206,7 +206,7 @@
           document.getElementById('workStatus').value = 'Student'; 
           
         // Redirect to success.html
-        window.location.href = '/Success.html';
+        window.location.href = '/TheEvent/public/Success.html';
       } else {
         // Handle errors (e.g., display an error message)
         const errorData = await response.json();
@@ -214,7 +214,7 @@
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('An unexpected error occurred');
+      alert(error.message);
     }
 });
   
@@ -260,7 +260,7 @@ document.getElementById('workingClassForm').addEventListener('submit', async fun
       document.getElementById('workStatus1').value = 'Working Class';
 
       // Redirect to success.html
-      window.location.href = '/Success2.html';
+      window.location.href = '/TheEvent/public/Success2.html';
     } else {
       // Handle errors (e.g., display an error message)
       const errorData = await response.json();
