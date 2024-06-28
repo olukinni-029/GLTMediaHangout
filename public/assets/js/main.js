@@ -186,7 +186,7 @@
   
     try {
       // Send a POST request to the server
-      const response = await fetch('/registerStudent', {
+      const response = await fetch('https://theeventservice.onrender.com/registerStudent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -237,7 +237,7 @@ document.getElementById('workingClassForm').addEventListener('submit', async fun
 
   try {
     // Send a POST request to the server
-    const response = await fetch('/registerWorkingClass', {
+    const response = await fetch('https://theeventservice.onrender.com/registerWorkingClass', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -268,7 +268,7 @@ document.getElementById('workingClassForm').addEventListener('submit', async fun
     }
   } catch (error) {
     console.error('Error:', error);
-    alert('An unexpected error occurred');
+    alert('An unexpected error occurred',error);
   }
 });
 
