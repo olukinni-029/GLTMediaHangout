@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Particpant</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registered Participants</h2>
+        <table id="attendeesTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Unit in Ministry</th>
+                    <th>Status</th>
+                    <th>Zodiac</th>
+                    <th>Work Status</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center;">
+                <!-- Data will be dynamically populated here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Initialize DataTables -->
+    <script>
+    $(document).ready(function() {
+        // Initialize DataTable with options
+        $('#attendeesTable').DataTable({
+            ajax: {
+                url: '/attendees', // Endpoint to fetch data from
+                dataSrc: '' // This is required if your JSON returns an array directly
+            },
+            columns: [
+                { data: 'name' },
+                { data: 'phone' },
+                { data: 'email' },
+                { data: 'unit' },
+                { data: 'status' },
+                { data: 'zodiac' },
+                { data: 'workStatus' }
+            ]
+        });
+    });
+    </script>
+
+</body>
+</html>
